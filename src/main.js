@@ -8,6 +8,13 @@ import routerMap from './routers'
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
+// Vue.http.headers.common['Access-Control-Allow-Origin'] = '*'
+// Vue.http.options.xhr = {withCredentials: true};
+
+// Vue.http.headers.common['Content-Type']='application/json'
+// Vue.http.headers.common['Content-Type']='application/json'
+Vue.http.headers.common['Accept']='application/json'
+
 var router = new VueRouter({
 	hashbang: true,
 	history: false,

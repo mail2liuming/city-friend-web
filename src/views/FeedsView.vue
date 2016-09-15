@@ -23,7 +23,10 @@
 		},
 		methods:{
 			getTopics(){
-				this.$http.get('https://mojo-backend-mingliu.c9users.io/v2/feeds/entries?page=#{this.page}')
+				let url = 'https://mojo-backend-mingliu.c9users.io/v2/feeds/entries.json?page=1'
+				console.log(url)
+				// var requestHeaders = {'Content-Type':'application/json'}
+				this.$http.get(url)
 					.then(response=>{
 						this.feeds.concat(response.body);
 					})
