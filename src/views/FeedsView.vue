@@ -1,5 +1,5 @@
 <script >
-	import Feed from '../components/FeedCom.vue'
+	import FeedCom from '../components/FeedCom.vue'
 	export default{
 		data(){
 			return{
@@ -9,7 +9,7 @@
 			}
 		},
 		components: {
-			Feed
+			FeedCom
 		},
 		route:{
 			data(transition){
@@ -28,7 +28,8 @@
 				// var requestHeaders = {'Content-Type':'application/json'}
 				this.$http.get(url)
 					.then(response=>{
-						this.feeds.concat(response.body);
+						// this.feeds.concat(response.data);
+						this.feeds = response.data
 					})
 			},
 			// getScrollData(){
@@ -58,6 +59,8 @@
 
 <template>
 	<section class="feed-list">
-		<feed v-for='feed in feeds' :data='feed'></feed>	
+		<feed-com v-for='feed in feeds' :data='feed'>
+			
+		</feed-com>	
 	</section>
 </template>
