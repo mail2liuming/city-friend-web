@@ -28,8 +28,8 @@
 				// var requestHeaders = {'Content-Type':'application/json'}
 				this.$http.get(url)
 					.then(response=>{
-						// this.feeds.concat(response.data);
-						this.feeds = response.data
+						this.feeds = this.feeds.concat(response.data);
+						// this.feeds = response.data
 					})
 			},
 			// getScrollData(){
