@@ -14,7 +14,7 @@
 		},
 		methods:{
 			doLogin(){
-				this.$route.router.go('/')
+				// this.$route.router.go('/')
 			}
 		}
 	}
