@@ -14,7 +14,10 @@
 		},
 		methods:{
 			doLogin(){
-				this.$route.router.go('/')
+				this.$http.post('https://mojo-backend-mingliu.c9users.io/v2/login',{email:'example@railstutorial.org',password:'foobar'}).then(resonpse=>{
+					console.log(resonpse.data.token)
+					this.$route.router.go('/')
+				})
 			}
 		}
 	}
@@ -26,6 +29,7 @@
 		<section class="container">
 			<bs-input label='email' :value.sync="email"></bs-input>
 			<bs-input label='password' :value.sync="pwd"></bs-input>
+			<a class="button" @click="doLogin">登录</a>
 		</section>
 	</div>
 	
