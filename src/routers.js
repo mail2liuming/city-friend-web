@@ -1,11 +1,12 @@
 'use strict'
 import FeedsView from './views/feedsview.vue'
+import LoginView from './views/LoginView.vue'
 
 export default function(router){
 	router.map({
 		'/feeds':{
 			component: FeedsView
-		}
+		},
 		// '/calendars':{
 		// 	component: CalendarsView
 		// },
@@ -14,9 +15,10 @@ export default function(router){
 		// },
 		
 	
-		// '/login':{
-		// component: LoginView
-		// },
+		'/login':{
+			name:'login',
+			component: LoginView
+		}
 		// '/signup':{
 		// 	component: SignupView
 		// },

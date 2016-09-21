@@ -13,16 +13,48 @@
 		components:{
 			aside
 		},
+		methods:{
+			openMenu(){
+				this.showLeft = !this.showLeft
+			},
+			navRoute (e, name) {
+				this.showLeft = !this.showLeft
+                this.$route.router.go({name: name})
+            }
+		}
 
 	}
 </script>
 
 <template>
-	<aside :show.sync="showLeft" placement="left" header="Title" width="350">
+<div>
+	<div class="toolbar-nav"
+                    @click="openMenu">
+    </div>
+
+    <aside :show.sync="showLeft" placement="left" header="Title" width="350">
 		<ul>
-			<li> login </li>
+			<li @click="navRoute($event, 'login')"> login </li>
 			<li> messages </li>
 			<li> friends </li>
 		</ul>
 	</aside>
+
+</div>
+
+	
 </template>
+
+<style >
+	.toolbar-nav {
+    width: 49px;
+    height: 44px;
+    position: relative;
+    background: url("../assets/images/components/nav_icon.png") no-repeat center center;
+    background-size: 19px 16px;
+    margin: 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+</style>

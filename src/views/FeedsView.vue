@@ -52,9 +52,6 @@
 		beforeDestroy:function(){
 			window.removeEventListener('scroll',this.getScrollData)
 		},
-		ready:function(){
-			this.showLeft = true;
-		}
 
 	}
 
@@ -72,7 +69,7 @@
 
 <template>
 	<div>
-		<nav-header :show-left="showLeft"></nav-header>
+		<nav-header ></nav-header>
 		<section class="feed-list">
 			<feed-com v-for='feed in feeds' :data='feed'>
 			

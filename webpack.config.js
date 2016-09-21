@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: './src/main.js',
@@ -21,8 +22,15 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
         exclude: /node_modules/
-      },
-      {
+      },{
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract(
+            "style-loader", 'css-loader!sass-loader')
+      }, {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract(
+            "style-loader", "css-loader")
+      },{
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file',
         query: {
@@ -46,6 +54,11 @@ if (process.env.NODE_ENV === 'production') {
       'process.env': {
         NODE_ENV: '"production"'
       }
+    }),
+    new ExtractTextPlugin("style.css", {
+        allChunks: true,
+        publicPath: '/dist/',
+        disable: false
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
