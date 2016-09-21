@@ -14,7 +14,7 @@
 		},
 		methods:{
 			doLogin(){
-				this.$http.post('https://mojo-backend-mingliu.c9users.io/v2/login',{email:'example@railstutorial.org',password:'foobar'}).then(resonpse=>{
+				this.$http.post('https://mojo-backend-mingliu.c9users.io/v2/login',{email:this.email,password:this.pwd}).then(resonpse=>{
 					console.log(resonpse.data.token)
 					this.$route.router.go('/')
 				})
