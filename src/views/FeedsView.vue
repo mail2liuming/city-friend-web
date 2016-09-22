@@ -59,7 +59,21 @@
 
 </script>
 
-<style >
+<style lang="sass">
+	.display-flex {
+    		display: -moz-box;
+    		/* Firefox */
+    		display: -ms-flexbox;
+    		/* IE10 */
+    		display: -webkit-box;
+    		/* Safari */
+    		display: -webkit-flex;
+    		/* Chrome, WebKit */
+    		display: flexbox;
+    		display: flex;
+		}
+
+
 	.feed-list{
 		position: relative;
 		padding: 0;

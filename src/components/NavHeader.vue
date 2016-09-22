@@ -28,9 +28,9 @@
 
 <template>
 <div>
-	<div class="toolbar-nav"
+	<span class="toolbar-nav"
                     @click="openMenu">
-    </div>
+    </span>
 
     <slot class='slot-tabs'></slot>
 
@@ -53,7 +53,6 @@
     height: 44px;
     position: relative;
     float :left;
-    display: inline;
     background: url("../assets/images/components/nav_icon.png") no-repeat center center;
     background-size: 19px 16px;
     margin: 0;
@@ -62,10 +61,9 @@
     left: 0;
 }
 .slot-tabs{
-    	position:'relative';
-    	display: inline;
+    	
     	float: right;
-    	left:80px;
+    	
 
     }
 </style>

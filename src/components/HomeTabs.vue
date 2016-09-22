@@ -25,13 +25,23 @@
 </script>
 
 <template>
-
-	<tabset :active.sync="active">
+<div class = 'slot-tabs'>
+	<tabset :active.sync="active" >
 		<tab header = "feeds"></tab>
 		<tab header = 'calendar'></tab>
 		<tab header = 'messages'></tab>
 	</tabset>
 
-
+</div>
 	
 </template>
+
+<style>
+	.slot-tabs{
+    	position: relative;;
+    	float: right;
+    	
+
+    }
+
+</style>

@@ -5,7 +5,7 @@
   
 
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --colors",
+    "dev": "webpack-dev-server --inline --hot --colors --progress --info",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {

@@ -10,5 +10,18 @@
 </script>
 
 <template>
-	<p> {{data.id}}  {{data.user_name}} </p>
+	<div class="feed-content"> 
+
+	<span> {{data.id}} </span>
+	<span> {{data.user_name}} </span>   </div>
 </template>
+
+<style lang="sass">
+
+
+	.feed-content{
+		display:flex;
+		
+		justify-content: space-around;
+	}
+</style>

@@ -25,11 +25,11 @@ module.exports = {
       },{
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract(
-            "style-loader", 'css-loader!sass-loader')
+            "style-loader", 'css-loader?sourceMap!sass-loader!cssnext-loader')
       }, {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
-            "style-loader", "css-loader")
+            "style-loader", "css-loader?sourceMap!cssnext-loader")
       },{
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file',
@@ -43,7 +43,8 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins:[new ExtractTextPlugin("style.css",{allChunks:true})]
 }
 
 if (process.env.NODE_ENV === 'production') {
