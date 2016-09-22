@@ -1,6 +1,7 @@
 <script >
 	import FeedCom from '../components/FeedCom.vue'
 	import NavHeader from '../components/NavHeader.vue'
+	import HomeTabs from '../components/HomeTabs.vue'
 	export default{
 		data(){
 			return{
@@ -11,7 +12,8 @@
 		},
 		components: {
 			FeedCom,
-			NavHeader
+			NavHeader,
+			HomeTabs
 		},
 		route:{
 			data(transition){
@@ -69,7 +71,9 @@
 
 <template>
 	<div>
-		<nav-header ></nav-header>
+		<nav-header >
+			<home-tabs :active="0"></home-tabs>
+		</nav-header>
 		<section class="feed-list">
 			<feed-com v-for='feed in feeds' :data='feed'>
 			

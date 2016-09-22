@@ -10,5 +10,5 @@
 </script>
 
 <template>
-	<p> {{data.id}} </p>
+	<p> {{data.id}}  {{data.user_name}} </p>
 </template>
